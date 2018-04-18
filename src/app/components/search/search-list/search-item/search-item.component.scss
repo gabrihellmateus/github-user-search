@@ -3,13 +3,13 @@
 
 @import 'themes';
 
-.user-list-item {
+.search-list-item {
   padding-top: 24px;
   padding-bottom: 24px;
   border-bottom: $border;
 }
 
-.user-item-link {
+.search-item-link {
   font-size: 16px;
   color: $c-link;
   font-weight: 700;
@@ -18,7 +18,7 @@
   &:hover { color: $c-link-hover; }
 }
 
-.user-item-image {
+.search-item-image {
   @include square(50px);
   display: inline-block;
   vertical-align: middle;

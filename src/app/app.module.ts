@@ -20,13 +20,17 @@ import { AlertComponent } from './components/alert/alert.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingComponent } from './components/loading/loading.component';
 
+// Search
+import {
+  SearchComponent,
+  SearchFormComponent,
+  SearchListComponent,
+  SearchItemComponent
+} from './components/search/index';
+
 // User
 import {
   UserComponent,
-  UserSearchComponent,
-  UserSearchFormComponent,
-  UserListComponent,
-  UserItemComponent,
   UserDetailsComponent,
   UserRepositoryListComponent,
   UserRepositoryItemComponent,
@@ -37,18 +41,18 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    UserSearchComponent,
-    UserSearchFormComponent,
-    UserListComponent,
-    UserItemComponent,
-    UserDetailsComponent,
     HeaderComponent,
+    AlertComponent,
+    SearchComponent,
+    SearchFormComponent,
+    SearchListComponent,
+    SearchItemComponent,
+    UserComponent,
+    UserDetailsComponent,
     UserRepositoryListComponent,
     UserRepositoryItemComponent,
-    AlertComponent,
     UserFollowerListComponent,
     UserFollowerItemComponent,
-    UserComponent,
     LoadingComponent
   ],
   imports: [

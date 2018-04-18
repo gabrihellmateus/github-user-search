@@ -1,15 +1,15 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { User } from '../../../../shared/models/user.model';
-import { GithubAPIService } from '../../../../shared/services/githubAPI.service';
+import { User } from '../../../shared/models/user.model';
+import { GithubAPIService } from '../../../shared/services/githubAPI.service';
 import { TransitiveCompileNgModuleMetadata } from '@angular/compiler';
 
 @Component({
-  selector: 'app-user-search-form',
-  templateUrl: './user-search-form.component.html',
-  styleUrls: ['./user-search-form.component.scss']
+  selector: 'app-search-form',
+  templateUrl: './search-form.component.html',
+  styleUrls: ['./search-form.component.scss']
 })
-export class UserSearchFormComponent {
+export class SearchFormComponent {
   public loading: Boolean;
   public userName: string;
 

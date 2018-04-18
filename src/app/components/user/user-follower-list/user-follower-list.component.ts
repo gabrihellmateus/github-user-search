@@ -23,7 +23,7 @@ export class UserFollowerListComponent implements OnInit {
 
   ngOnInit() {
     const login = this.route.snapshot.parent.params['login'];
-    console.log(login);
+
     this.getFollowers(login);
   }
 

@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// Search
+import { SearchComponent } from './components/search/index';
+
 // User
 import {
   UserComponent,
-  UserSearchComponent,
-  UserSearchFormComponent,
-  UserDetailsComponent,
   UserRepositoryListComponent,
-  UserFollowerListComponent,
+  UserFollowerListComponent
 } from './components/user/index';
 
 const routes: Routes = [
-  { path: '', component: UserSearchComponent },
+  { path: '', component: SearchComponent },
   {
     path: 'users/:login',
     component: UserComponent,
