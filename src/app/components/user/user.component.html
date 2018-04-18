@@ -1,0 +1,18 @@
+<main [@fadeInOutAnimation]>
+  <app-user-details></app-user-details>
+
+  <div class="user-details-content">
+    <nav class="user-content-tabs">
+      <ul>
+        <li class="user-content-tabs-item">
+          <a class="user-content-tabs-link" routerLink="./repositories" routerLinkActive="active">Repositories</a>
+        </li>
+        <li class="user-content-tabs-item">
+          <a class="user-content-tabs-link" routerLink="./followers" routerLinkActive="active">Followers</a>
+        </li>
+      </ul>
+    </nav>
+
+    <router-outlet></router-outlet>
+  </div>
+</main>

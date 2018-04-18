@@ -1,0 +1,30 @@
+// Themes: Github Colors
+// --------------------------------------------
+
+// Colors
+$c-black: lighten(#000, 15%);
+$c-grey: #e1e4e8;
+$c-ice: #fafbfc;
+$c-blue: #0366d6;
+$c-green: #279f43;
+$c-red: #d55;
+$c-orange: #e36209;
+
+$c-link: #0366d6;
+$c-link-hover: saturate(lighten($c-link, 15%), 10%);
+
+$c-primary: $c-blue;
+$c-secondary: $c-orange;
+$c-tertiary: $c-grey;
+
+$c-border-color: $c-grey;
+$c-icon: #6a737d;
+
+// Alert
+$alert-font-size: 18px;
+$alert-success-color: $c-green;
+$alert-error-color: $c-red;
+
+// Defaults
+$c-text-default: $c-black;
+$c-background-color-default: $c-ice;

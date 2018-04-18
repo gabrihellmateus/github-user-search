@@ -1,0 +1,132 @@
+// // Core: Helpers
+// --------------------------------------------
+
+%ui-clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after { clear: both; }
+}
+.ui-clearfix { @extend %ui-clearfix; }
+
+// Image replacement
+%ui-ir {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+
+// Alignments
+%ui-align-left { text-align: left; }
+%ui-align-center { text-align: center; }
+%ui-align-right { text-align: right; }
+
+.ui-align-left { @extend %ui-align-left; }
+.ui-align-center { @extend %ui-align-center; }
+.ui-align-right { @extend %ui-align-right; }
+
+%ui-auto-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Floats
+%ui-pull-left { float: left; }
+%ui-pull-right { float: right; }
+.ui-pull-left { @extend %ui-pull-left; }
+.ui-pull-right { @extend %ui-pull-right; }
+
+// Center
+%ui-center-vertically {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+// Display
+%ui-inline-top {
+  display: inline-block;
+  vertical-align: top;
+}
+
+%ui-inline-middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+.ui-inline-middle { @extend %ui-inline-middle; }
+
+%ui-inline-bottom {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+%table-align { display: table; }
+
+%ui-show { display: block; }
+%ui-hide { display: none; }
+
+// Visibillity
+%ui-invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+%ui-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+// Box space
+%ui-no-padding { padding: 0 !important; }
+%ui-no-margin { margin: 0 !important; }
+%ui-no-padding-bottom { padding-bottom: 0 !important; }
+
+// Text
+%ui-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+%ui-text-uppercase { text-transform: uppercase; }
+
+// Responsive
+%ui-show { display: block !important; }
+.ui-show { @extend %ui-show; }
+
+%ui-hide { display: none !important; }
+.ui-hide { @extend %ui-hide; }
+
+%ui-show-md {
+  display: none !important;
+
+  @include breakpoint(max-width, $container-md) {
+    display: block !important;
+  }
+}
+.ui-show-md { @extend %ui-show-md; }
+
+%ui-hide-md {
+  @include breakpoint(max-width, $container-md) {
+    display: none !important;
+  }
+}
+.ui-hide-md { @extend %ui-hide-md; }
+
+%ui-show-lg {
+  display: none !important;
+
+  @include breakpoint(max-width, $container-lg) {
+    display: block !important;
+  }
+}
+.ui-show-lg { @extend %ui-show-lg; }
+
+%ui-hide-lg {
+  @include breakpoint(max-width, $container-lg) {
+    display: none !important;
+  }
+}
+.ui-hide-lg { @extend %ui-hide-lg; }

@@ -1,0 +1,6 @@
+<div class="user-respository-list-wrapper" [@fadeInOutAnimation]>
+  <h2 class="user-respository-list-title">Repositories</h2>
+  <ul *ngIf="repositories" class="user-respository-list">
+    <app-user-repository-item *ngFor="let repoItem of repositories" [repository]="repoItem"></app-user-repository-item>
+  </ul>
+</div>

@@ -1,0 +1,6 @@
+<div class="user-follower-list-wrapper" [@fadeInOutAnimation]>
+  <h2 class="user-follower-list-title">Followers</h2>
+  <ul *ngIf="followers" class="user-follower-list">
+    <app-user-follower-item *ngFor="let followerItem of followers" [follower]="followerItem"></app-user-follower-item>
+  </ul>
+</div>

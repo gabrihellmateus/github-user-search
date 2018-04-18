@@ -1,0 +1,46 @@
+// Component
+// User Details: Repository Item
+// --------------------------------------------
+
+@import 'themes';
+
+.user-respository-item {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-top: $border;
+}
+
+.user-respository-name {
+  font-size: 20px;
+  color: $c-link;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: $transition;
+
+  &:hover {
+    color: $c-link-hover;
+    border-bottom-color: $c-link-hover;
+  }
+}
+
+.user-respository-description {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.user-respository-footer-list {
+  font-size: 12px;
+}
+
+.user-respository-footer-item {
+  display: inline-block;
+  vertical-align: middle;
+
+  + .user-respository-footer-item { margin-left: 16px; }
+}
+
+.user-respository-footer-item span,
+.user-respository-icon {
+  display: inline-block;
+  vertical-align: top;
+}

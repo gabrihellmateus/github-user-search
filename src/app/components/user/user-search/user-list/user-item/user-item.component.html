@@ -1,0 +1,6 @@
+<li class="user-list-item">
+  <a class="user-item-link" [routerLink]="['/users', user.login]">
+    <img class="user-item-image" [src]="user.avatar_url" alt="{{ user.login }}">
+    <span class="user-list-item-login">{{ user.login }}</span>
+  </a>
+</li>

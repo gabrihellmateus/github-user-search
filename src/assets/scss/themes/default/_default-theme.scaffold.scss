@@ -1,0 +1,21 @@
+// Theme: Default Scaffold
+// -------------------------------------
+
+// Text
+$t-font-size: 14px !default;
+$t-line-height: 18px !default;
+$f-family-default: Helvetica, Arial, sans-serif !default;
+
+// Body
+$body-margin: 0 !default;
+$body-padding: 0 !default;
+$body-text-color: $c-text-default !default;
+$body-font-size: $t-font-size !default;
+$body-line-height: $t-line-height !default;
+$body-font-family: $f-family-default !default;
+$body-overflow-x: hidden !default;
+$body-background-color: $c-background-color-default !default;
+
+// Main
+$main-padding: 60px 0 80px !default;
+$main-max-width: 740px !default;

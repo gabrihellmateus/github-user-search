@@ -1,0 +1,51 @@
+// Component
+// User Details: Content
+// -------------------------------------------
+
+@import 'themes';
+
+.user-details-content {
+  display: inline-block;
+  vertical-align: top;
+  width: 70%;
+  margin-left: 4%;
+
+  @include lg-breakpoint {
+    display: block;
+    width: 100%;
+    margin: 60px 0 0;
+    text-align: center;
+  }
+}
+
+.user-content-tabs {
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.user-content-tabs-item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.user-content-tabs-link {
+  display: block;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: $c-secondary;
+  text-align: center;
+  border-bottom: 1px solid transparent;
+  transition: transition;
+  opacity: .6;
+
+  &:hover {
+    opacity: .8;
+    border-bottom-color: $c-text-default;
+  }
+
+  &.active {
+    color: $c-text-default;
+    border-bottom-color: $c-secondary;
+    opacity: 1;
+  }
+}

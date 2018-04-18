@@ -1,0 +1,24 @@
+// Base: Scaffold
+// --------------------------------------------
+
+*,
+*:after,
+*:before { box-sizing: border-box; }
+
+body {
+  margin: $body-margin;
+  padding: $body-padding;
+  color: $body-text-color;
+  line-height: $body-line-height;
+  font-size: $body-font-size;
+  font-family: $body-font-family;
+  overflow-x: $body-overflow-x;
+  background-color: $body-background-color;
+}
+
+main {
+  padding: $main-padding;
+  max-width: $main-max-width;
+  margin-right: auto;
+  margin-left: auto;
+}

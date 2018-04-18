@@ -1,0 +1,31 @@
+// Themes: Default Colors
+// --------------------------------------------
+
+// Colors
+$c-black: lighten(#000, 10%) !default;
+$c-grey: #e1e4e8 !default;
+$c-ice: #fafbfc !default;
+$c-blue: #346699 !default;
+$c-green: #a7d59d !default;
+$c-grey: #e9ecef !default;
+$c-red: #d55 !default;
+$c-orange: #e36209 !default;
+
+$c-link: $c-blue !default;
+$c-link-hover: darken($c-blue, 4%) !default;
+
+$c-primary: $c-blue !default;
+$c-secondary: $c-black !default;
+$c-tertiary: $c-grey !default;
+
+$c-border-color: $c-grey !default;
+$c-icon: lighten(#000, 30%) !default;
+
+// Alert
+$alert-font-size: 18px !default;
+$alert-success-color: $c-green;
+$alert-error-color: $c-red;
+
+// Defaults
+$c-text-default: rgba(255,255,255,0.85) !default;
+$c-background-color-default: $c-black !default;

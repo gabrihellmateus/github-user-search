@@ -1,0 +1,115 @@
+// Core: Mixins
+// --------------------------------------------
+
+// Size
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+// Arrow border icons
+@mixin icon-arrow-top($color, $size) {
+  border-style: solid;
+  border-color:  transparent transparent $color transparent;
+  border-width: 0 $size $size $size;
+}
+
+@mixin icon-arrow-bottom($color, $size) {
+  border-style: solid;
+  border-color: $color transparent transparent transparent;
+  border-width: $size $size 0 $size;
+}
+
+@mixin icon-arrow-left($color, $size) {
+  border-style: solid;
+  border-color: transparent $color transparent transparent ;
+  border-width: $size $size  $size 0;
+}
+
+@mixin icon-arrow-right($color, $size) {
+  border-style: solid;
+  border-color: transparent transparent transparent $color;
+  border-width: $size 0 $size $size;
+}
+
+// Border radius
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+// Breakpoint
+@mixin breakpoint($feature, $value) {
+  // Set global device param
+  $media: only screen;
+
+  @media #{$media} and ($feature: $value) {
+    @content;
+  }
+}
+
+// Desktop
+@mixin lg-breakpoint($feature: max-width) {
+  @include breakpoint($feature, $container-lg) {
+    @content;
+  }
+}
+
+// Small screen / tablet
+@mixin md-breakpoint($feature: max-width) {
+  @include breakpoint($feature, $container-md) {
+    @content;
+  }
+}
+
+// Phone
+@mixin sm-breakpoint($feature: max-width) {
+  @include breakpoint($feature, $container-sm) {
+    @content;
+  }
+}
+
+// Buttons
+@mixin btn-states($bg-color: $c-primary, $c-text: $c-text, $important: null) {
+  color: $c-text $important;
+  background-color: $bg-color $important;
+
+  &:hover,
+  &:focus {
+    background-color: darken($bg-color, 6%) $important;
+  }
+
+  &:active { background-color: darken($bg-color, 8%) $important; }
+
+  &[disabled] {
+    background-color: #ccc;
+
+    &:hover,
+    &:focus,
+    &:active { background-color: #ccc; }
+  }
+}
+
+// Zindex - Function
+@function zindex($layer) {
+  @if not map-has-key($zindex, $layer) {
+    @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+  }
+
+  @return map-get($zindex, $layer);
+}

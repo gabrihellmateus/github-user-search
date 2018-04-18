@@ -1,0 +1,29 @@
+// Themes: Default Buttons
+// --------------------------------------------
+
+// Button
+$button-padding: 6px 12px !default;
+$button-font-size: 14px !default;
+$button-font-weight: 600 !default;
+$button-line-height: 20px !default;
+$button-border-width: 1px !default;
+$button-border-style: solid !default;
+$button-border-color: rgba(27,31,35,0.2) !default;
+$button-border-radius: 0.25em !default;
+
+// Button Primary
+$button-primary-color: #fff !default;
+$button-primary-border-color: #28a745 !default;
+$button-primary-background-color: #28a745 !default;
+$button-primary-background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%) !default;
+
+// Button Primary Hover
+$button-primary-hover-background-color: #269f42 !default;
+$button-primary-hover-background-image: linear-gradient(-180deg, #2fcb53 0%, #269f42 90%) !default;
+$button-primary-hover-border-color: rgba(27,31,35,0.5) !default;
+
+// // Button Primary Active
+$button-primary-active-background-color: #279f43 !default;
+$button-primary-active-background-image: none !default;
+$button-primary-active-border-color: rgba(27,31,35,0.5) !default;
+$button-primary-active-box-shadow: inset 0 0.15em 0.3em rgba(27,31,35,0.15) !default;

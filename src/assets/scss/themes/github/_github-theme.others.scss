@@ -1,0 +1,39 @@
+// Theme: Default Others
+// -------------------------------------
+
+// Border
+$border-width: 1px;
+$border-type: solid;
+$border-color: $c-border-color;
+$border: $border-width $border-type $border-color;
+
+// Transition
+$transition: .1s;
+
+// Border-radius
+$border-radius: 3px;
+
+// Breakpoints
+$container-xs: 320px;
+$container-tn: 480px;
+$container-sm: 580px;
+$container-md: 768px;
+$container-lg: 960px;
+$container-st: 1024px;
+$container-xl: 1140px;
+
+// Z-indexes
+$zindex: (
+  belowLayer   : -1,
+  defaultLayer : 0,
+  firstLayer   : 1000,
+  secondLayer  : 2000,
+  thirdLayer   : 3000,
+  fourthLayer  : 4000,
+  fifthLayer   : 5000,
+  sixthLayer   : 6000,
+  seventhLayer : 7000,
+  eighthLayer  : 8000,
+  ninthLayer   : 9000,
+  tenthLayer   : 10000
+);
