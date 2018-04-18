@@ -3,22 +3,34 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DataStorageService {
   private data: any;
+  private cacheKeyPrefix = 'github-user-cache-';
 
   constructor() { }
 
-  setData(item: string, data: any) {
-    localStorage.setItem(item, JSON.stringify(data));
+  setPrefix(item: string) {
+    console.log(this.cacheKeyPrefix + item);
+    return `${this.cacheKeyPrefix + item}`;
+  }
 
-    this.data = localStorage.setItem(item, JSON.stringify(data));
+  setData(item: string, data: any) {
+    const itemPrefixed = this.setPrefix(item);
+
+    sessionStorage.setItem(itemPrefixed, JSON.stringify(data));
+
+    this.data = sessionStorage.setItem(itemPrefixed, JSON.stringify(data));
   }
 
   getData(item: string) {
-    this.data = JSON.parse(localStorage.getItem(item));
+    const itemPrefixed = this.setPrefix(item);
+
+    this.data = JSON.parse(sessionStorage.getItem(itemPrefixed));
 
     return this.data || [];
   }
 
   hasData(item) {
-    return JSON.parse(localStorage.getItem(item)) !== null;
+    const itemPrefixed = this.setPrefix(item);
+
+    return JSON.parse(sessionStorage.getItem(itemPrefixed)) !== null;
   }
 }

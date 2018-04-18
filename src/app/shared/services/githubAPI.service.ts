@@ -16,6 +16,7 @@ export class GithubAPIService {
   private searchUsersURL = 'https://api.github.com/search/users';
   private searchUserDetailsURL = 'https://api.github.com/users';
   private limitPerPage = '5';
+  debounceTime = 1000;
   userNameUpdated = new EventEmitter();
   loading: EventEmitter<Boolean> = new EventEmitter();
 

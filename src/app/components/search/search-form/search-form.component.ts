@@ -17,7 +17,7 @@ export class SearchFormComponent implements OnInit {
 
   ngOnInit() {
     this.searchTerms.pipe(
-        debounceTime(1000),
+        debounceTime(this.githubAPIService.debounceTime),
         distinctUntilChanged(),
       )
       .subscribe(term => this.getUsers(term)
