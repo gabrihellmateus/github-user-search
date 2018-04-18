@@ -34,9 +34,6 @@ export class UserDetailsComponent implements OnInit {
       this.githubAPIService.getUserDetails(login)
         .subscribe(
           (userDetails: UserDetails) => {
-            console.log('GET REQUEST');
-
-            console.log(userDetails);
             this.user = userDetails;
             this.dataStorageService.setData(itemName, userDetails);
           }

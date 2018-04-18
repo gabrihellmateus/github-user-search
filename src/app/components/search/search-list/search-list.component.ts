@@ -16,7 +16,6 @@ export class SearchListComponent implements OnInit {
   ngOnInit() {
     this.githubAPIService.userNameUpdated.subscribe(
       (users: User[]) => {
-        console.log(users);
         this.usersList = users;
       }
     );

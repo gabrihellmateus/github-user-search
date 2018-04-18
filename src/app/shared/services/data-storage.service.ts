@@ -8,7 +8,6 @@ export class DataStorageService {
   constructor() { }
 
   setPrefix(item: string) {
-    console.log(this.cacheKeyPrefix + item);
     return `${this.cacheKeyPrefix + item}`;
   }
 
