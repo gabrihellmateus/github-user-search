@@ -1,0 +1,28 @@
+// Component - User List Item
+// -------------------------------------
+
+@import 'themes';
+
+.search-list-item {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: $border;
+}
+
+.search-item-link {
+  font-size: 16px;
+  color: $c-link;
+  font-weight: 700;
+  transition: $transition;
+
+  &:hover { color: $c-link-hover; }
+}
+
+.search-item-image {
+  @include square(50px);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  overflow: hidden;
+  border-radius: $border-radius;
+}

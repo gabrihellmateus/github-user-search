@@ -1,0 +1,29 @@
+// Component
+// User Details - UserFollower List Item
+// -------------------------------------
+
+@import 'themes';
+
+.user-follower-list-item {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-top: $border;
+}
+
+.user-follower-item-link {
+  font-size: 16px;
+  color: $c-link;
+  font-weight: 700;
+  transition: $transition;
+
+  &:hover { color: $c-link-hover; }
+}
+
+.user-follower-image {
+  @include square(50px);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  overflow: hidden;
+  border-radius: $border-radius;
+}

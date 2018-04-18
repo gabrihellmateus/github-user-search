@@ -1,0 +1,31 @@
+// Themes: Dark Colors
+// --------------------------------------------
+
+// Colors
+$c-black: lighten(#000, 10%);
+$c-grey: #e1e4e8;
+$c-ice: #fafbfc;
+$c-blue: #346699;
+$c-green: #a7d59d;
+$c-grey: #e9ecef;
+$c-red: #d55;
+$c-orange: #e36209;
+
+$c-link: $c-green;
+$c-link-hover: darken($c-green, 4%);
+
+$c-primary: $c-green;
+$c-secondary: $c-green;
+$c-tertiary: $c-ice;
+
+$c-border-color: $c-ice;
+$c-icon: $c-ice;
+
+// Alert
+$alert-font-size: 18px;
+$alert-success-color: $c-green;
+$alert-error-color: $c-red;
+
+// Defaults
+$c-text-default: $c-ice;
+$c-background-color-default: $c-black;

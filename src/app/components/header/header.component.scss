@@ -1,0 +1,24 @@
+// Component - Header
+// -------------------------------------
+
+@import 'themes';
+
+.header {
+  margin: 30px 0 0;
+  text-align: center;
+
+  a { color: $c-text-default; }
+}
+
+.header-logo {
+  @include square(64px);
+  color: $c-text-default;
+}
+
+.header-logo,
+.header-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header-title { margin-left: 10px; }

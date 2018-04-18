@@ -1,0 +1,49 @@
+// Component
+// User Details - Profile
+// -------------------------------------
+
+@import 'themes';
+
+.user-details-profile {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+
+  @include lg-breakpoint {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.user-image {
+  @include square(230px);
+  border-radius: $border-radius * 2;
+}
+
+.user-name {
+  margin: 0;
+  padding: 8px 0 2px;
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.user-login {
+  margin: 0;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.user-details-info { margin-top: 20px; }
+
+.user-details-info-item {
+  + .user-details-info-item { margin-top: 10px; }
+}
+
+.user-icon {
+  vertical-align: middle;
+  color: $c-icon ;
+}
