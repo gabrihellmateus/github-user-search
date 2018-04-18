@@ -29,13 +29,11 @@ export class UserFollowerListComponent implements OnInit {
 
   private getFollowers(login: string) {
     const itemName = `${login}-followers`;
-    console.log(this.followers);
 
     if (!this.dataStorageService.hasData(itemName)) {
       this.githubAPIService.getUserUserFollowers(login)
         .subscribe(
           (followers: UserFollower) => {
-            console.log('GITHUB');
             this.followers = followers;
             this.dataStorageService.setData(itemName, followers);
           }
