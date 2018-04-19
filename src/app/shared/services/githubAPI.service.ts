@@ -15,7 +15,7 @@ import { UserFollower } from '../../shared/models/user-follower.model';
 export class GithubAPIService {
   private searchUsersURL = 'https://api.github.com/search/users';
   private searchUserDetailsURL = 'https://api.github.com/users';
-  private limitPerPage = '5';
+  private limitPerPage = '30';
   debounceTime = 1000;
   userNameUpdated = new EventEmitter();
   loading: EventEmitter<Boolean> = new EventEmitter();

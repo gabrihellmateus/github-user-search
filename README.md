@@ -1,8 +1,14 @@
 # Github User Search
 
-> A Angular project to search users via the [Github Search API](https://developer.github.com/v3/search/).
+An Angular project to search users via the [Github Search API](https://developer.github.com/v3/search/).
 
-Some requests are cached in session storage to limit the use of the API, also there's is a limit for results of `5`.
+Some requests are cached in session storage (this will be improved) to limit the use of the API.
+
+#### GitHub API Rate Limit
+> For API requests using Basic Authentication or OAuth, you can make up to 5000 requests per hour. Authenticated requests are associated with the authenticated user, regardless of whether Basic Authentication or an OAuth token was used. This means that all OAuth applications authorized by a user share the same quota of 5000 requests per hour when they authenticate with different tokens owned by the same user. For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
+
+#### GitHub Search API Rate Limit
+> The Search API has a custom rate limit. For requests using Basic Authentication, OAuth, or client ID and secret, you can make up to 30 requests per minute. For unauthenticated requests, the rate limit allows you to make up to 10 requests per minute.
 
 ## Development server
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
