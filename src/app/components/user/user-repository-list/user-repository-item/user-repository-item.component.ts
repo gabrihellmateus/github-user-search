@@ -1,9 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-import { SplitPipe } from 'angular-pipes';
-import { JoinPipe } from 'angular-pipes';
-
-import { UserRepository } from '../../../../shared/models/user-repository.model';
+import { UserRepository } from '@app/shared/models';
 
 @Component({
   selector: 'app-user-repository-item',

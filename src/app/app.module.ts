@@ -9,16 +9,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 // Shared
-import {
-  GithubAPIService,
-  AlertService,
-  DataStorageService
-} from './shared/services/index';
+import { GithubAPIService, AlertService, DataStorageService } from '@app/shared/services';
 
 // Components
-import { AlertComponent } from './components/alert/alert.component';
-import { HeaderComponent } from './components/header/header.component';
-import { LoadingComponent } from './components/loading/loading.component';
+import { AlertComponent } from '@app/components/alert/alert.component';
+import { HeaderComponent } from '@app/components/header/header.component';
+import { LoadingComponent } from '@app/components/loading/loading.component';
 
 // Search
 import {
@@ -26,7 +22,7 @@ import {
   SearchFormComponent,
   SearchListComponent,
   SearchItemComponent
-} from './components/search/index';
+} from '@app/components/search/index';
 
 // User
 import {
@@ -36,7 +32,7 @@ import {
   UserRepositoryItemComponent,
   UserFollowerListComponent,
   UserFollowerItemComponent
-} from './components/user/index';
+} from '@app/components/user/index';
 
 @NgModule({
   declarations: [

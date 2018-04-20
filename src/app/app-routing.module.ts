@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Search
-import { SearchComponent } from './components/search/index';
+import { SearchComponent } from '@app/components/search/index';
 
 // User
 import {
   UserComponent,
   UserRepositoryListComponent,
   UserFollowerListComponent
-} from './components/user/index';
+} from '@app/components/user/index';
 
 const routes: Routes = [
   { path: '', component: SearchComponent },

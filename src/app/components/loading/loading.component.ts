@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GithubAPIService } from '../../shared/services/githubAPI.service';
+import { GithubAPIService } from '@app/shared/services';
 
 @Component({
   selector: 'app-loading',

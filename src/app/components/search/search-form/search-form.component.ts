@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-import { User } from '../../../shared/models/user.model';
-import { GithubAPIService } from '../../../shared/services/githubAPI.service';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Subject } from 'rxjs/Subject';
+import { User } from '@app/shared/models';
+import { GithubAPIService } from '@app/shared/services';
 
 @Component({
   selector: 'app-search-form',

@@ -1,11 +1,8 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-
-import { GithubAPIService } from '../../../shared/services/githubAPI.service';
-import { UserRepository } from '../../../shared/models/user-repository.model';
-import { fadeInOutAnimation } from '../../../shared/animations/fadeInOut.animation';
-import { User } from '../../../shared/models/user.model';
-import { DataStorageService } from '../../../shared/services';
+import { User, UserRepository } from '@app/shared/models';
+import { GithubAPIService, DataStorageService } from '@app/shared/services';
+import { fadeInOutAnimation } from '@app/shared/animations/fadeInOut.animation';
 
 @Component({
   selector: 'app-user-repository-list',

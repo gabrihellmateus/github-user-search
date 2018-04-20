@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-import { User } from '../../../shared/models/user.model';
-import { GithubAPIService } from '../../../shared/services/githubAPI.service';
+import { GithubAPIService } from '@app/shared/services';
+import { User } from '@app/shared/models';
 
 @Component({
   selector: 'app-search-list',

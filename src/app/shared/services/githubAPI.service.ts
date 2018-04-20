@@ -3,13 +3,8 @@ import { HttpClient, HttpParams, HttpResponse, HttpErrorResponse } from '@angula
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { catchError, map, debounceTime, distinctUntilChanged, switchMap, finalize } from 'rxjs/operators';
-
-import { User } from '../../shared/models/user.model';
-import { UserDetails } from '../../shared/models/user-details.model';
-import { UserRepository } from '../../shared/models/user-repository.model';
-import { AlertService } from './alert.service';
-import { Alert } from '../../shared/models/alert.model';
-import { UserFollower } from '../../shared/models/user-follower.model';
+import { AlertService } from '@app/shared/services/alert.service';
+import { Alert, User, UserDetails, UserRepository, UserFollower } from '@app/shared/models';
 
 @Injectable()
 export class GithubAPIService {

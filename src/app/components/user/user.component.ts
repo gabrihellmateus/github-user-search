@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { fadeInOutAnimation } from '../../shared/animations/fadeInOut.animation';
+import { fadeInOutAnimation } from '@app/shared/animations';
 
 @Component({
   selector: 'app-user',

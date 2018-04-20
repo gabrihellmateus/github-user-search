@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-
-import { GithubAPIService } from '../../../shared/services/githubAPI.service';
-import { UserFollower } from '../../../shared/models/user-follower.model';
-import { fadeInOutAnimation } from '../../../shared/animations/fadeInOut.animation';
-import { DataStorageService } from '../../../shared/services';
+import { GithubAPIService, DataStorageService } from '@app/shared/services';
+import { UserFollower } from '@app/shared/models';
+import { fadeInOutAnimation } from '@app/shared/animations';
 
 @Component({
   selector: 'app-user-follower-list',

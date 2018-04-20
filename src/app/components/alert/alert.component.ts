@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-
-import { AlertService } from '../../shared/services/alert.service';
-import { Alert } from '../../shared/models/alert.model';
+import { Alert } from '@app/shared/models';
+import { AlertService } from '@app/shared/services';
 
 @Component({
   selector: 'app-alert',

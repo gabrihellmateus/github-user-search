@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-
-import { GithubAPIService } from '../../../shared/services/githubAPI.service';
-import { User } from '../../../shared/models/user.model';
-import { UserDetails } from '../../../shared/models/user-details.model';
-import { DataStorageService } from '../../../shared/services';
-import { logging } from 'protractor';
+import { GithubAPIService, DataStorageService } from '@app/shared/services';
+import { User, UserDetails } from '@app/shared/models';
 
 @Component({
   selector: 'app-user-details',
