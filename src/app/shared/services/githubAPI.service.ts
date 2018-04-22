@@ -29,11 +29,11 @@ export class GithubAPIService {
       map((response: Response) => {
         const data = response['items'];
 
-        const users = data.map(user => {
-          return new User({
+        const users: User = data.map(user => {
+          return {
             login: user.login,
             avatar_url: user.avatar_url
-          });
+          };
         });
 
         return users;
@@ -45,7 +45,7 @@ export class GithubAPIService {
   getUserDetails(userName: string) {
     return this.httpClient.get(`${this.searchUserDetailsURL}/${userName}`).pipe(
       map((response: Response) => {
-        const userDetails = new UserDetails({
+        const userDetails: UserDetails = {
           login: response['login'],
           avatar_url: response['avatar_url'],
           name: response['name'],
@@ -55,8 +55,8 @@ export class GithubAPIService {
           location: response['location'],
           company: response['company'],
           public_repos: response['public_repos'],
-          UserFollowers: response['UserFollowers'],
-        });
+          followers: response['followers'],
+        };
 
         return userDetails;
       }),
@@ -72,8 +72,8 @@ export class GithubAPIService {
       map((response: Response) => {
         const data: any = response;
 
-        const repositories = data.map(repository => {
-          return new UserRepository({
+        const repositories: UserRepository = data.map(repository => {
+          return {
             name: repository['name'],
             description: repository['description'],
             html_url: repository['html_url'],
@@ -81,7 +81,7 @@ export class GithubAPIService {
             stargazers_count: repository['stargazers_count'],
             forks_count: repository['forks_count'],
             updated_at: repository['updated_at']
-          });
+          };
         });
 
         return repositories;
@@ -98,12 +98,12 @@ export class GithubAPIService {
       map((response: Response) => {
         const data: any = response;
 
-        const userFollowers = data.map(userFollower => {
-          return new UserFollower({
+        const userFollowers: UserFollower = data.map(userFollower => {
+          return {
             login: userFollower['login'],
             avatar_url: userFollower['avatar_url'],
             html_url: userFollower['html_url']
-          });
+          };
         });
 
         return userFollowers;
