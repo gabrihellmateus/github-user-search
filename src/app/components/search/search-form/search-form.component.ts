@@ -31,7 +31,6 @@ export class SearchFormComponent implements OnInit {
     this.githubAPIService.getUsers(userName).subscribe(
         (users: User[]) => {
           this.githubAPIService.userNameUpdated.emit(users);
-          this.githubAPIService.loading.emit(false);
         }
       );
   }

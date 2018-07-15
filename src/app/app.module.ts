@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { NgArrayPipesModule, NgStringPipesModule } from 'angular-pipes';
@@ -10,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Shared
 import { GithubAPIService, AlertService, DataStorageService } from '@app/shared/services';
+import { TokenInterceptor } from '@app/shared/services/token.interceptor';
 
 // Components
 import { AlertComponent } from '@app/components/alert/alert.component';
@@ -34,6 +36,8 @@ import {
   UserFollowerItemComponent
 } from '@app/components/user/index';
 
+import { FooterComponent } from './components/footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +53,8 @@ import {
     UserRepositoryItemComponent,
     UserFollowerListComponent,
     UserFollowerItemComponent,
-    LoadingComponent
+    LoadingComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +69,12 @@ import {
   providers: [
     DataStorageService,
     GithubAPIService,
-    AlertService
+    AlertService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,5 @@
 export interface UserDetails {
+  id: number;
   login: string;
   avatar_url: string;
   name: string;
@@ -7,6 +8,4 @@ export interface UserDetails {
   blog: string;
   location: string;
   company: string;
-  public_repos: string;
-  followers: string;
 }

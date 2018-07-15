@@ -1,36 +1,46 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { HttpClient, HttpParams, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { catchError, map, debounceTime, distinctUntilChanged, switchMap, finalize } from 'rxjs/operators';
+
+import { githubAPIConfig } from '@app/app.config';
 import { AlertService } from '@app/shared/services/alert.service';
 import { Alert, User, UserDetails, UserRepository, UserFollower } from '@app/shared/models';
 
 @Injectable()
 export class GithubAPIService {
-  private searchUsersURL = 'https://api.github.com/search/users';
-  private searchUserDetailsURL = 'https://api.github.com/users';
-  private limitPerPage = '30';
   debounceTime = 1000;
   userNameUpdated = new EventEmitter();
-  loading: EventEmitter<Boolean> = new EventEmitter();
 
   constructor(
     private httpClient: HttpClient,
     private alertService: AlertService
   ) {}
 
+  getRateLimit() {
+    console.log('GET RATE LIMIT');
+
+    this.httpClient.get(githubAPIConfig.url.rateLimit).subscribe(
+      (response: Response) => {
+        const data = response['resources']['search'];
+        console.log(data);
+      });
+  }
+
   getUsers(userName: string) {
     let params = new HttpParams();
-    params = params.append('per_page', this.limitPerPage);
     params = params.append('q', userName);
 
-    return this.httpClient.get(this.searchUsersURL, {params}).pipe(
+    this.getRateLimit();
+
+    return this.httpClient.get(githubAPIConfig.url.search, {params}).pipe(
       map((response: Response) => {
         const data = response['items'];
 
         const users: User = data.map(user => {
           return {
+            id: user.id,
             login: user.login,
             avatar_url: user.avatar_url
           };
@@ -43,9 +53,12 @@ export class GithubAPIService {
   }
 
   getUserDetails(userName: string) {
-    return this.httpClient.get(`${this.searchUserDetailsURL}/${userName}`).pipe(
+    this.getRateLimit();
+
+    return this.httpClient.get(`${githubAPIConfig.url.profile}/${userName}`).pipe(
       map((response: Response) => {
         const userDetails: UserDetails = {
+          id: response['id'],
           login: response['login'],
           avatar_url: response['avatar_url'],
           name: response['name'],
@@ -53,9 +66,7 @@ export class GithubAPIService {
           email: response['email'],
           blog: response['blog'],
           location: response['location'],
-          company: response['company'],
-          public_repos: response['public_repos'],
-          followers: response['followers'],
+          company: response['company']
         };
 
         return userDetails;
@@ -65,10 +76,9 @@ export class GithubAPIService {
   }
 
   getUserRepositories(userName: string) {
-    let params = new HttpParams();
-    params = params.append('per_page', this.limitPerPage);
+    this.getRateLimit();
 
-    return this.httpClient.get(`${this.searchUserDetailsURL}/${userName}/repos`, {params}).pipe(
+    return this.httpClient.get(`${githubAPIConfig.url.profile}/${userName}/repos`).pipe(
       map((response: Response) => {
         const data: any = response;
 
@@ -91,10 +101,9 @@ export class GithubAPIService {
   }
 
   getUserUserFollowers(userName: string) {
-    let params = new HttpParams();
-    params = params.append('per_page', this.limitPerPage);
+    this.getRateLimit();
 
-    return this.httpClient.get(`${this.searchUserDetailsURL}/${userName}/followers`, {params}).pipe(
+    return this.httpClient.get(`${githubAPIConfig.url.profile}/${userName}/followers`).pipe(
       map((response: Response) => {
         const data: any = response;
 
